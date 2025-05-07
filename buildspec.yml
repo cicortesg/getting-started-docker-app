@@ -3,8 +3,9 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - echo Logging in to Amazon ECR in $AWS_DEFAULT_REGION...
+      - echo Logging in to Amazon ECR...
       - aws --version
+      - aws --region
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin 402314752137.dkr.ecr.us-east-1.amazonaws.com
       - REPOSITORY_URI=402314752137.dkr.ecr.us-east-1.amazonaws.com/simple-docker-service-0ec6584f42a9
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
