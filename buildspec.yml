@@ -24,6 +24,5 @@ phases:
       - echo Writing image definitions file...
       - printf '[{"name":"docker-app","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
       - zip ImageDefinition.zip imagedefinitions.json && aws s3 cp ImageDefinition.zip s3://codepipeline-artifacts-bucket-dev-cicg/BuiltImages/
-      - echo Process completed!!
 #artifacts:
 #    files: imagedefinitions.json
