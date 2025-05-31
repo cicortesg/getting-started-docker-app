@@ -23,4 +23,4 @@ phases:
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
       - printf '[{"name":"docker-app","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
-      - zip ImageDefinitions.zip imagedefinitions.json && aws s3 cp ImageDefinitions.zip s3://codepipeline-artifacts-bucket-dev-cicg/BuiltImages/
+      - zip ImageDefinition.zip imagedefinitions.json && aws s3 cp ImageDefinition.zip s3://codepipeline-artifacts-bucket-dev-cicg/BuiltImages/
