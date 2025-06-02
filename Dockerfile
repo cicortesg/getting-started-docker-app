@@ -1,6 +1,7 @@
 # syntax=docker/dockerfile:1
 
-FROM node:lts-alpine
+#FROM node:lts-alpine
+FROM public.ecr.aws/docker/library/node:lts-alpine3.20
 WORKDIR /app
 COPY . .
 RUN yarn install --production
