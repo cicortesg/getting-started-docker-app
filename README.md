@@ -3,6 +3,7 @@
 # Another test by CICG!!!!!!
 # Another test!!!!!!
 # More tests!!!!
+# Tests using Codepipeline to cicked of the deployment process!!
 
 This repository is a sample application for users following the getting started guide at https://docs.docker.com/get-started/.
 
