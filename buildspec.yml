@@ -3,6 +3,7 @@ version: 0.2
 phases:
   pre_build:
     commands:
+      - echo Detecting changed files.....
       - echo "Previous commit ID: $CODEBUILD_WEBHOOK_PREV_COMMIT"
       - echo "Current commit ID: $CODEBUILD_RESOLVED_SOURCE_VERSION"
       - CHANGED_FILES=$(git diff --name-only $CODEBUILD_WEBHOOK_PREV_COMMIT $CODEBUILD_RESOLVED_SOURCE_VERSION)
