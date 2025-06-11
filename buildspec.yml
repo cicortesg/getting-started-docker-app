@@ -3,6 +3,10 @@ version: 0.2
 phases:
   pre_build:
     commands:
+      - echo "Previous commit ID: $CODEBUILD_WEBHOOK_PREV_COMMIT"
+      - echo "Current commit ID: $CODEBUILD_RESOLVED_SOURCE_VERSION"
+      - CHANGED_FILES=$(git diff --name-only $CODEBUILD_WEBHOOK_PREV_COMMIT $CODEBUILD_RESOLVED_SOURCE_VERSION)
+      - echo "Changed files: $CHANGED_FILES"
       - echo Logging in to Amazon ECR...
       - aws --version
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin 402314752137.dkr.ecr.us-east-1.amazonaws.com
